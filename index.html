@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Input to Table</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        .in input {
+            width: 280px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 4px 8px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Enter Data</h2>
+    <div class="in">
+        <center><input type="text" id="input1" placeholder="Name"></center><br>
+        <center><input type="text" id="input2" placeholder="Class"></center><br>
+        <center><input type="text" id="input3" placeholder="Roll No"></center><br>
+        <center><input type="text" id="input4" placeholder="Address"></center><br>
+        <center><button onclick="addRow()">Add to Table</button></center>
+
+    </div>
+
+    <h2>Table</h2>
+    <center>
+        <table id="dataTable" border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Class</th>
+                    <th>Roll No</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </center>
+
+    <script>
+        function addRow() {
+            var input1 = document.getElementById("input1").value;
+            var input2 = document.getElementById("input2").value;
+            var input3 = document.getElementById("input3").value;
+            var input4 = document.getElementById("input4").value;
+
+            var table = document.getElementById("dataTable");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+
+            cell1.innerHTML = input1;
+            cell2.innerHTML = input2;
+            cell3.innerHTML = input3;
+            cell4.innerHTML = input4;
+
+            // Clear input fields
+            document.getElementById("input1").value = "";
+            document.getElementById("input2").value = "";
+            document.getElementById("input3").value = "";
+            document.getElementById("input4").value = "";
+        }
+    </script>
+
+</body>
+
+</html>
